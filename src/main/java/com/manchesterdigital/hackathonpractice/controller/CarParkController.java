@@ -20,7 +20,7 @@ public class CarParkController {
     @ResponseBody
     public String getCarParks() {
         System.out.println("hi");
-        return carParkService.getCarParks().toString();
+        return carParkService.getCarParks().toString() + "Hello Fraser";
     }
 
 }
