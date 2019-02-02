@@ -1,8 +1,10 @@
 package com.manchesterdigital.hackathonpractice.controller;
 
+import com.manchesterdigital.hackathonpractice.domain.CarParks;
 import com.manchesterdigital.hackathonpractice.service.CarParkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,11 +18,10 @@ public class CarParkController {
         this.carParkService = carParkService;
     }
 
-    @RequestMapping("get")
+    @RequestMapping(method = RequestMethod.GET, produces = "application/hal+json")
     @ResponseBody
-    public String getCarParks() {
-        System.out.println("hi");
-        return carParkService.getCarParks().toString() + "Hello Fraser";
+    public CarParks getCarParks() {
+        return carParkService.getCarParks();
     }
 
 }
