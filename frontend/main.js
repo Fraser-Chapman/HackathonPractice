@@ -10,7 +10,7 @@ xhr.addEventListener("readystatechange", processRequest, false);
 function processRequest(e) {
     if (xhr.readyState === 4 && xhr.status === 200) {
         var response = JSON.parse(xhr.response);
-        alert(response.carParks);
+        alert(response.location);
 
     }
 }
